@@ -116,8 +116,8 @@ program
         files: [filePath.replaceAll("\\", "/")],
         dist: path.join(".dev", path.dirname(filePath).replace("src", "")),
         clean: false,
-      })
-      
+      });
+
       await new Promise((resolve) => waiter.once("end", resolve));
       reloadBot();
     });
