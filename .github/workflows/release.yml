@@ -44,7 +44,7 @@ jobs:
           files: |
             *.tgz
           body: |
-            # 📚 djs-core ${{ github.ref_name }} ([npm](https://www.npmjs.com/package/djs-core/v/${{ github.ref_name }}))
+            # 📚 @djs-core/cli ${{ github.ref_name }} ([npm](https://www.npmjs.com/package/@djs-core/cli/v/${{ github.ref_name }}))
             ## [Fixs]
             - Content to write manually
           draft: true
