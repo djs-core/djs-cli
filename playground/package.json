@@ -7,7 +7,6 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "cli": "link:@djs-core\\cli",
     "discord.js": "14.17.3",
     "djs-core": "1.3.4",
     "dotenv": "16.4.7"

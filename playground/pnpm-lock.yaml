@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      cli:
-        specifier: link:@djs-core\cli
-        version: link:@djs-core/cli
       discord.js:
         specifier: 14.17.3
         version: 14.17.3
