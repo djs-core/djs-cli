@@ -9,10 +9,10 @@
     "djs-core": "dist/index.js"
   },
   "repository": {
-    "url": "https://github.com/djs-core/djs-builder"
+    "url": "https://github.com/djs-core/djs-cli"
   },
   "bugs": {
-    "url": "https://github.com/djs-core/djs-builder/issues"
+    "url": "https://github.com/djs-core/djs-cli/issues"
   },
   "scripts": {
     "dev": "tsup --config tsup-dev.config.ts",
