@@ -19,8 +19,8 @@ importers:
         version: 16.4.7
     devDependencies:
       '@djs-core/cli':
-        specifier: ../dist
-        version: link:../dist
+        specifier: ../
+        version: link:..
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
