@@ -60,8 +60,15 @@ program
       files: ["src/**/*.ts"],
       artefact: ["src/.env"],
       dist: ".dev",
-    });
+    }).on('step', (step) => {
+      if (step.status === "error")  {
+        console.log(chalk.red("❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed."));
+        console.log(chalk.red("❌ Please fix the error and relaunch cli."));
+        return process.exit(1);
+      }
+    })
     await new Promise((resolve) => bundleEvent.once("end", resolve));
+
     let bot = spawn("node", ["index.js"], {
       stdio: "inherit",
       cwd: path.join(process.cwd(), ".dev"),
@@ -112,14 +119,23 @@ program
           `🔄 File ${filePath.replaceAll("\\", "/").replace("src/", "").replace(".ts", ".js")} changed.`,
         ),
       );
-      const waiter = bundleBot({
+      const buildEvent = bundleBot({
         files: [filePath.replaceAll("\\", "/")],
         dist: path.join(".dev", path.dirname(filePath).replace("src", "")),
         clean: false,
       });
 
-      await new Promise((resolve) => waiter.once("end", resolve));
-      reloadBot();
+      buildEvent.on('step', (step) => {
+        if (step.status === "error")  {
+          console.log(chalk.red("❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed."));
+          buildEvent.removeAllListeners();
+          return;
+        }
+      });
+
+      buildEvent.once("end", () => {
+        reloadBot();
+      });
     });
   });
 
