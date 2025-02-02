@@ -25,7 +25,7 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@djs-core/builder": "1.1.1",
+    "@djs-core/builder": "1.2.2",
     "chalk": "4.1.2",
     "chokidar": "4.0.3",
     "commander": "13.1.0",

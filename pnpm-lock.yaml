@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@djs-core/builder':
-        specifier: 1.1.1
-        version: 1.1.1(typescript@5.7.3)
+        specifier: 1.2.2
+        version: 1.2.2(typescript@5.7.3)
       chalk:
         specifier: 4.1.2
         version: 4.1.2
@@ -57,8 +57,8 @@ importers:
 
 packages:
 
-  '@djs-core/builder@1.1.1':
-    resolution: {integrity: sha512-7PI3LMJBQnY1HD88ostVt80XbHSxpt/MoVtZz9Lamp4rCOlWj6ek4KM5v2G02LRURw/kwNesZtO3El2hkqyOEQ==}
+  '@djs-core/builder@1.2.2':
+    resolution: {integrity: sha512-DQrcUGaEzeLgOGEMb7XllnuZQ5/5MFiQ5Y8JkXS7G/Z3Myj/hBIw4z3g02Fx567Jyp/bHn0kAqSfYKySmtYKWA==}
     engines: {node: '>=16.6.0'}
 
   '@esbuild/aix-ppc64@0.24.2':
@@ -1583,7 +1583,7 @@ packages:
 
 snapshots:
 
-  '@djs-core/builder@1.1.1(typescript@5.7.3)':
+  '@djs-core/builder@1.2.2(typescript@5.7.3)':
     dependencies:
       glob: 11.0.1
       javascript-obfuscator: 4.1.1
