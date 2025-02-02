@@ -60,13 +60,17 @@ program
       files: ["src/**/*.ts"],
       artefact: ["src/.env"],
       dist: ".dev",
-    }).on('step', (step) => {
-      if (step.status === "error")  {
-        console.log(chalk.red("❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed."));
+    }).on("step", (step) => {
+      if (step.status === "error") {
+        console.log(
+          chalk.red(
+            "❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed.",
+          ),
+        );
         console.log(chalk.red("❌ Please fix the error and relaunch cli."));
         return process.exit(1);
       }
-    })
+    });
     await new Promise((resolve) => bundleEvent.once("end", resolve));
 
     let bot = spawn("node", ["index.js"], {
@@ -125,9 +129,13 @@ program
         clean: false,
       });
 
-      buildEvent.on('step', (step) => {
-        if (step.status === "error")  {
-          console.log(chalk.red("❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed."));
+      buildEvent.on("step", (step) => {
+        if (step.status === "error") {
+          console.log(
+            chalk.red(
+              "❌ An error occurred while building the bot. Please check the logs above. The bot will not be reloaded until the error is fixed.",
+            ),
+          );
           buildEvent.removeAllListeners();
           return;
         }
