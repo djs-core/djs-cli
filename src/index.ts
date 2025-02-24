@@ -105,15 +105,9 @@ program
           `🗑️ File ${filePath.replaceAll("\\", "/").replace("src/", "").replace(".ts", ".js")} deleted.`,
         ),
       );
-      fs.unlinkSync(
-        path.join(
-          ".dev",
-          filePath
-            .replaceAll("\\", "/")
-            .replace("src/", "")
-            .replace(".ts", ".js"),
-        ),
-      );
+      const rPath = path.join(".dev", filePath.replaceAll("\\", "/").replace("src/", "").replace(".ts", ".js"));
+      if (!fs.existsSync(rPath)) return;
+      fs.unlinkSync(rPath);
       reloadBot();
     });
 
